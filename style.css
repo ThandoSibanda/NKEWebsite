@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo
+{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toggle
+{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+.toggle.active
+{
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+.showcase
+{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+  z-index: 2;
+}
+.showcase.active
+{
+  right: 300px;
+}
+
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: darkgrey;
+  mix-blend-mode: overlay;
+}
+.text
+{
+  position: relative;
+  z-index: 10;
+}
+
+.text h2
+{
+  font-size: 5em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text h3
+{
+  font-size: 4em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text p
+{
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.text a:hover
+{
+  letter-spacing: 6px;
+}
+.social
+{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+  margin-right: 5px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+.menu
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul
+{
+  position: relative;
+}
+.menu ul li
+{
+  list-style: none;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+}
+.menu ul li a:hover
+{
+  color: darkred; 
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+
+.main-scrollview{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+
+  
+
+}
+
+.panel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 90vh;
+
+ 
+}
+
+
+.about-container {
+  width: 40%;
+  margin: 20px;
+}
+
+.about-container  h2{
+  color: darkred;
+  font-size: 42px;
+}
+
+.about-container  p{
+  color: #fff;
+}
+
+
+
+.image-container {
+  width: 60%;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.box{
+
+  position: relative;
+  width: 50vw;
+  height: 80vh;
+  background: black;
+  border-radius: 8px;
+  margin: auto;
+  overflow: hidden;
+
+}
+
+.box::before
+{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50vw;
+  height: 80vh;
+  background: linear-gradient(0deg,transparent,transparent,red,red,red);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 24s linear infinite;
+  
+  
+
+}
+
+.box::after
+{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50vw;
+  height: 80vh;
+  background: linear-gradient(0deg,transparent,transparent,red,red,red);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 24s linear infinite;
+  animation-delay: -12s;
+  
+
+}
+
+
+@keyframes animate{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.box form{
+  position: absolute;
+  inset: 4px;
+  background: #000;
+  padding: 50px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  overflow:auto
+}
+
+.box form h2{
+  color: #fff;
+  margin: auto;
+}
+
+.box form .inputBox{
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+  padding: 5px;
+  background: transparent;
+  outline: none;
+  box-shadow:  none;
+  font-size:1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.box form .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  pointer-events: none;
+ 
+  font-size: 1em;
+  letter-spacing: 0.5em;
+  transition: 0.5s;
+
+}
+
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span
+{
+  
+  font-size: 0.75em;
+  transform: translateY(-34px);
+
+}
+
+.box form .inputBox input{
+
+  position:relative;
+  width: 100%;
+  line-height: 1.5em; /* Adjust the line-height value */
+}
+
+.box form .inputBox i{
+
+  position:relative;
+  width: 100%;
+}
+
+
+
+.box form .inputBox input{
+
+  position:relative;
+  width: 100%;   
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.box form .inputBox span 
+{
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+
+}
+
+
+.box form .inputBox input:valid ~ span, 
+.box form .inputBox input:focus  ~ span
+{
+  color: #fff;
+  font-size: 0.75em;
+  transform: translateY(-28px);
+}
+
+.box form .inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  pointer-events: none;
+
+
+
+}
+
+
+
+.box form .inputBox input:valid ~ i, 
+.box form .inputBox input:focus  ~ i
+{
+  height:44px;
+
+}
+
+.box form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: auto;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.box form input[type="submit"]:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.box form .inputBox p {
+  position: absolute;
+  left: 10px; /* Adjust the left position as desired */
+  top: 50%; /* Adjust the top position as desired */
+  transform: translateY(-50%);
+  color: white; /* Change the text color to white */
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+
+.box form .inputBox textarea {
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+  line-height: 1.5em;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: 2px solid white;
+  outline: none;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+  resize:vertical; 
+  max-width: 100%; 
+  width: 100%; 
+}
+
+
+.box form .inputBox textarea:valid ~ span,
+.box form .inputBox textarea:focus ~ span {
+  color: #fff;
+  font-size: 0.75em;
+  transform: translateY(-28px);
+}
+
+.box form .inputBox p {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+
+.box form .inputBox textarea:valid ~ p,
+.box form .inputBox textarea:focus ~ p {
+  color: #fff;
+  font-size: 0.75em;
+  transform: translateY(-28px);
+}
+
+
+
+
+
+
+
+@media (max-width: 991px)
+{
+  .showcase,
+  .showcase header
+  {
+    padding: 40px;
+  }
+  .text h2
+  {
+    font-size: 3em;
+  }
+  .text h3
+  {
+    font-size: 2em;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .image-container {
+    width: 100%;
+    order: 1;
+  }
+
+  .about-container {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .panel {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .about-container {
+    margin: 20px 0 0;
+  }
+  
+  .image-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
